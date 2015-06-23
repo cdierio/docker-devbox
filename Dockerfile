@@ -8,23 +8,13 @@ RUN useradd -d /home/dev -ms /bin/bash -k /root/ dev; \
 # using bash as default
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-# install via apt-get
-RUN apt-get update && apt-get install -y npm git vim ruby xdg-utils lynx
+# install via apt-get and clean up
+RUN  apt-get update && apt-get install -y subversion git vim nano wget curl build-essential ;\
+ apt-get clean; \
+ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# update npm, fix nodejs naming
-RUN npm install -g npm@latest; \
-	 ln -s /usr/bin/nodejs /usr/bin/node
-RUN gem install sass
+WORKDIR "/home/dev/app"
 
-# install npm modules as user with sudo (e.g. yo, ...)
-USER dev
-RUN sudo npm install -g grunt-cli gulp bower yo generator-angular-fullstack
+VOLUME [ "/home/dev/app"]
 
-# general cleanup
-RUN sudo npm cache clean
-
-WORKDIR "/home/dev"
-
-VOLUME [ "/app"]
-
-EXPOSE 9000
+CMD ["/bin/bash"]

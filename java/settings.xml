@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- ##########################################################
+            settings for Bisnode Informatics development
+      
+      PLEASE SEE settings.xml.default in this folder for original maven one,
+      including explanation
+    -->
+    <!--mirrors>
+        <mirror>
+          <id>artifactory</id>
+          <name>Maven Repository Manager(Artifactory) for all internal lookups</name>
+          <url>http://art-dev-service-01/artifactory/repo</url>
+          <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors-->
+    <servers>
+      <server>
+           <!--
+              server for maven site deployment
+           -->
+            <id>bisnode-sites</id>           
+            <username>mavensite</username>
+            <password>ma?enS8</password>
+            <directoryPermissions>0775</directoryPermissions>
+            <filePermissions>0664</filePermissions>            
+        </server>   
+    </servers>
+    <profiles>
+     <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>libs-release</name>
+          <url>http://art-dev-service-01/artifactory/libs-release</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>http://art-dev-service-01/artifactory/libs-snapshot</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>plugins-release</name>
+          <url>http://art-dev-service-01/artifactory/plugins-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>plugins-snapshot</name>
+          <url>http://art-dev-service-01/artifactory/plugins-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>libs-release</name>
+          <url>http://ipm-dev02/artifactory/libs-release</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>http://ipm-dev02/artifactory/libs-snapshot</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>plugins-release</name>
+          <url>http://ipm-dev02/artifactory/plugins-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>plugins-snapshot</name>
+          <url>http://ipm-dev02/artifactory/plugins-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>nearshore</id>
+    </profile>  <profile>
+       <id>sonar</id>           
+        <properties>
+            <sonar.jdbc.url>
+              jdbc:mysql://da-build02:3306/db_sonar?useUnicode=true&amp;characterEncoding=utf8
+            </sonar.jdbc.url>
+            <sonar.host.url>http://da-build02/sonar</sonar.host.url>
+            <sonar.jdbc.username>sonar-local</sonar.jdbc.username>
+            <sonar.jdbc.password>son8rL0cal</sonar.jdbc.password>
+        </properties>
+    </profile> 
+    </profiles>
+   <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+   </activeProfiles>
+    <pluginGroups>
+        <pluginGroup>org.eclipse.jetty</pluginGroup>
+    </pluginGroups>
+</settings>

@@ -9,9 +9,16 @@ RUN useradd -d /home/dev -ms /bin/bash -k /root/ dev; \
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # install via apt-get and clean up
-RUN  apt-get update && apt-get install -y subversion git vim nano wget curl build-essential ;\
+RUN  apt-get update && apt-get install -y subversion git vim nano wget curl python-dev python-pip python-setuptools build-essential xmlstarlet jq ;\
  apt-get clean; \
  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN yes | pip install csvkit
+
+ # Install bash completion
+ADD ./bash_completion-git /etc/bash_completion.d/git
+ADD ./bash_completion-svn /etc/bash_completion.d/svn
+
+RUN echo "for file in /etc/bash_completion.d/* ; do  source $file; done" >> /home/dev/.bashrc
 
 WORKDIR "/home/dev/app"
 

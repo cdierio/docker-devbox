@@ -27,14 +27,9 @@ RUN wget http://launchpadlibrarian.net/188304624/datamash_1.0.6-2_amd64.deb && \
 	dpkg -i datamash_1.0.6-2_amd64.deb && \
 	rm datamash_1.0.6-2_amd64.deb
 
-# Install and setup Maven
-RUN wget http://mirror.arcor-online.net/www.apache.org/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz && \
-	    mkdir /usr/local/apache-maven ; tar xzvf apache-maven-3.3.3-bin.tar.gz -C /usr/local/apache-maven/ && \
-	    rm apache-maven-3.3.3-bin.tar.gz
-
 # Define commonly used variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
 ENV MAVEN_HOME /usr/local/apache-maven/apache-maven-3.3.3
+ENV JAVA_HOME /root/.jenv/versions/1.8
 ENV PATH $PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:/root/.jenv/bin
 
 # install latest nvm
@@ -54,6 +49,11 @@ RUN wget https://github.com/gcuisinier/jenv/archive/master.tar.gz && \
  		jenv add /usr/lib/jvm/java-8-oracle && \
 		jenv rehash && \
 		jenv global 1.8
+
+# Install and setup Maven
+RUN wget http://mirror.arcor-online.net/www.apache.org/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz && \
+    mkdir /usr/local/apache-maven && tar xzvf apache-maven-3.3.3-bin.tar.gz -C /usr/local/apache-maven/ && \
+    rm apache-maven-3.3.3-bin.tar.gz
 
 # install bash-it
 RUN wget https://github.com/Bash-it/bash-it/archive/master.tar.gz && \

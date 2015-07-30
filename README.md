@@ -7,7 +7,7 @@ use development tools from container, modifying local sources ...
 ```
 
 # Supported tags and respective `Dockerfile` links
-- [`base`(*base/Dockerfile*)](https://github.com/pgrund/docker-devbox/tree/master/base/Dockerfile)
+- [`base`,`latest`(*base/Dockerfile*)](https://github.com/pgrund/docker-devbox/tree/master/base/Dockerfile)
   - no special programming language, lot's of useful tools ...
 - [`java`(*java/Dockerfile*)](https://github.com/pgrund/docker-devbox/tree/master/java/Dockerfile)
   - for java development (java6, java7, java8 via [jenv](https://github.com/gcuisinier/jenv); maven, ...)

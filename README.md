@@ -19,13 +19,14 @@ all others refer to this one as parent image
 
 ### content
 - general (build-essentials, curl, wget, vim, ... )
-- [subversion](http://subversion.apache.org/)
+- [subversion](https://subversion.apache.org/)
 - [git](https://git-scm.com/)
-- [python](http://www.python.org), [pip](https://pip.pypa.io/), [pygments](http://pygments.org)
-- [xmlstarlet](http://xmlstar.sourceforge.net/)
-- [jq](http://stedolan.github.io/jq/)
+- [python](https://www.python.org), [pip](https://pip.pypa.io/), [pygments](https://pygments.org)
+- [xmlstarlet](https://xmlstar.sourceforge.net/)
+- [jq](https://stedolan.github.io/jq/)
 - [csvkit](https://csvkit.readthedocs.org)
-- [datamash](http://www.gnu.org/software/datamash/)
+- [datamash](https://www.gnu.org/software/datamash/)
+- [graphviz](https://www.graphviz.org/)
 - [bash-it](https://github.com/Bash-it/bash-it)
 
 ### volumes
@@ -38,9 +39,9 @@ project sources are supposed to be mounted under `/app`
 [java](https://java.com/download) development providing multiple java versions in parallel via [jenv](https://github.com/gcuisinier/jenv)
 
 ### content
-- [jdk6 (oracle)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-- [jdk7 (oracle)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-- [jdk8 (oracle)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [jdk6 (oracle)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [jdk7 (oracle)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [jdk8 (oracle)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [maven (v3.3.3)](https://maven.apache.org/download.html)
 
 ### volumes
@@ -56,11 +57,11 @@ frontend development based on [javascript](http://www.w3schools.com/js/)
 
 ### content
 - [nodejs](https://nodejs.org/), [npm](https://www.npmjs.com/) via [nvm](https://github.com/creationix/nvm)
-- [bower](http://bower.io/)
-- [grunt](http://gruntjs.com/)
-- [gulp](http://gulpjs.com/)
-- [yeoman](http://yeoman.io/)
-  - [generators](http://yeoman.io/generators/): angular, angular-fullstack, webapp, wordpress
+- [bower](https://bower.io/)
+- [grunt](https://gruntjs.com/)
+- [gulp](https://gulpjs.com/)
+- [yeoman](https://yeoman.io/)
+  - [generators](https://yeoman.io/generators/): angular, angular-fullstack, webapp, wordpress
 
 # general tipps
 It has come in handy to use local alias ...

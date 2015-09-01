@@ -13,7 +13,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 
 # install via apt-get and clean up
 RUN  apt-get update && \
-		 apt-get install -y software-properties-common python-software-properties unzip subversion git vim nano wget curl python-dev python-pip python-setuptools build-essential libssl-dev xmlstarlet jq;\
+		 apt-get install -y software-properties-common python-software-properties unzip subversion git vim nano wget curl python-dev python-pip python-setuptools build-essential libssl-dev graphviz xmlstarlet jq;\
 		 apt-get clean; \
  		 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

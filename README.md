@@ -43,6 +43,7 @@ project sources are supposed to be mounted under `/app`
 - [jdk7 (oracle)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [jdk8 (oracle)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [maven (v3.3.3)](https://maven.apache.org/download.html)
+- [maven (v2.2.1)](https://maven.apache.org/download.html)
 
 ### volumes
 a local maven repository can be mounted to `/root/.m2/repository` as well as a local maven configuration can be mounted to `/root.m2/settings.xml`
@@ -66,4 +67,7 @@ frontend development based on [javascript](http://www.w3schools.com/js/)
 # general tipps
 It has come in handy to use local alias ...
 
-``` alias mvn='docker run -it -v $HOME/.m2/repository:/root/.m2/repository -v $HOME/.m2/settings.xml:/root/.m2/settings.xml -v $(pwd):/app pgrund/devbox mvn $*' ```
+```bash
+$ alias mvn='docker run -it --rm -v $HOME/.m2/repository:/root/.m2/repository -v $HOME/.m2/settings.xml:/root/.m2/settings.xml -v $(pwd):/app pgrund/devbox mvn $*'
+$ alias devbox='docker run -it --rm-v -v $HOME/.m2/settings.xml:/root/.m2/settings.xml -v $(pwd):/app pgrund/devbox /bin/bash' 
+```

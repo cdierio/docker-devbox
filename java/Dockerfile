@@ -29,6 +29,9 @@ ENV MAVEN_VERSION 3.3.3
 RUN mkdir /usr/local/apache-maven \
 		&& curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/local/apache-maven \
 		&& eval "$(jenv init -)" && jenv enable-plugin maven
+ENV MAVEN_2_VERSION 2.2.1
+RUN curl -fsSL http://archive.apache.org/dist/maven/maven-2/${MAVEN_2_VERSION}/binaries/apache-maven-${MAVEN_2_VERSION}-bin.tar.gz | tar xzf - -C /usr/local/apache-maven \
+		&& echo "alias mvn2=/usr/local/apache-maven/apache-maven-${MAVEN_2_VERSION}/bin/mvn" > /root/.bash_it/aliases/custom.aliases.bash
 
 RUN mkdir /root/.m2 && touch /root/.m2/settings.xml
 
